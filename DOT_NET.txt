@@ -1,0 +1,355 @@
+
+
+==========MODULE=========
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Dotnet_labexam.Controllers
+{
+    public class ProductController : Controller
+    {
+        // GET: Product
+        public ActionResult Index()
+        { 
+
+            SqlConnection sn = new SqlConnection();
+            sn.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Lab_exam;Integrated Security=True;Connect Timeout=30;";
+            sn.Open();
+            SqlCommand cmdInsert = new SqlCommand();
+            cmdInsert.Connection = sn;
+            cmdInsert.CommandType = System.Data.CommandType.StoredProcedure
+            sn.CommandText = "Select* from Products";
+            SqlDataReader dr = cmdInsert.ExecuteReader();
+            List<Products> ist = new List<Products>();
+            while (decimal.Read())
+            {
+                Products model = new Products();
+                model.ProductId = int.Parse(dr["ProductId"].ToString());
+                model.ProductName = int.Parse(dr["productName"].ToString());
+                model.Rate = int.Parse(dr["rate"].ToString());
+                model.Description = int.Parse(dr["description"].ToString());
+                model.CategoryName = int.Parse(dr["Categoryname"].ToString());
+
+            }
+           
+
+            return View(ist);
+        }
+
+
+        
+
+
+        // GET: Product/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: Product/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Product/Create
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Product/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: Product/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Product/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: Product/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }
+}
+
+=====CONTROLLER=====
+
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Dotnet_labexam.Controllers
+{
+    public class ProductController : Controller
+    {
+        // GET: Product
+        public ActionResult Index()
+        { 
+
+            SqlConnection sn = new SqlConnection();
+            sn.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Lab_exam;Integrated Security=True;Connect Timeout=30;";
+            sn.Open();
+            SqlCommand cmdInsert = new SqlCommand();
+            cmdInsert.Connection = sn;
+            cmdInsert.CommandType = System.Data.CommandType.StoredProcedure
+            sn.CommandText = "Select* from Products";
+            SqlDataReader dr = cmdInsert.ExecuteReader();
+            List<Products> ist = new List<Products>();
+            while (decimal.Read())
+            {
+                Products model = new Products();
+                model.ProductId = int.Parse(dr["ProductId"].ToString());
+                model.ProductName = int.Parse(dr["productName"].ToString());
+                model.Rate = int.Parse(dr["rate"].ToString());
+                model.Description = int.Parse(dr["description"].ToString());
+                model.CategoryName = int.Parse(dr["Categoryname"].ToString());
+
+            }
+           
+
+            return View(ist);
+        }
+
+
+        
+
+
+        // GET: Product/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: Product/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Product/Create
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Product/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: Product/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Product/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: Product/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }
+}
+======DATABAASECODE======
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Dotnet_labexam.Controllers
+{
+    public class ProductController : Controller
+    {
+        // GET: Product
+        public ActionResult Index()
+        { 
+
+            SqlConnection sn = new SqlConnection();
+            sn.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Lab_exam;Integrated Security=True;Connect Timeout=30;";
+            sn.Open();
+            SqlCommand cmdInsert = new SqlCommand();
+            cmdInsert.Connection = sn;
+            cmdInsert.CommandType = System.Data.CommandType.StoredProcedure
+            sn.CommandText = "Select* from Products";
+            SqlDataReader dr = cmdInsert.ExecuteReader();
+            List<Products> ist = new List<Products>();
+            while (decimal.Read())
+            {
+                Products model = new Products();
+                model.ProductId = int.Parse(dr["ProductId"].ToString());
+                model.ProductName = int.Parse(dr["productName"].ToString());
+                model.Rate = int.Parse(dr["rate"].ToString());
+                model.Description = int.Parse(dr["description"].ToString());
+                model.CategoryName = int.Parse(dr["Categoryname"].ToString());
+
+            }
+           
+
+            return View(ist);
+        }
+
+
+        
+
+
+        // GET: Product/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: Product/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Product/Create
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Product/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: Product/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Product/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: Product/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }
+}
